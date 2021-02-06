@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<title>Login</title>
+<head>
+<style>
+
+body{
+background-color:#173F5F;
+background-image: url("12.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+#maindiv{
+height: 0 auto;
+width: 0 auto;
+
+}
+
+
+.topnav{
+display:flex;
+flex-wrap:wrap;
+flex-direction:row;
+float:left;
+background-color: #333;
+top: 0;
+width: 100%; 
+position:fixed;
+
+}
+
+.topnav a {
+display:flex;
+
+align-items:right;
+float: left;
+color: #f2f2f2;
+text-align: center;
+padding: 20px 20px ;
+text-decoration:none;
+font-size: 20px;
+display: inline;
+font-family: Cambria, serif;
+
+}
+		
+.topnav a:hover {
+background-color:white;
+color: black;
+
+}
+   
+.topnav a.a {
+background-color:#DC143C;
+color: white;
+}
+
+#img1{
+width:90px;
+height:70px;
+margin-left:800px;
+
+}
+
+
+.div1 {
+display: flex;
+  flex-direction: column;
+margin-top:200px;
+  width: 40%;
+  left: 30%;
+  min-height: 500px;
+  height: auto;
+  position: relative;
+  border-radius: 10px;
+  background-color:aqua;
+  
+
+ 
+}
+
+
+
+.link {
+  display: flex;
+  justify-content: space-evenly;
+  height: 70px;
+}
+
+.link a {
+  text-decoration: none;
+  font-size: 22px;
+  color:black;
+  width: 50%;
+  text-align: center;
+  padding-top: 10px;
+  transition: all 0.2s ease;
+  border-bottom: 2px solid grey;
+}
+
+.link a:first-child {
+  border-right: 2px solid grey;
+}
+
+.link>a:hover {
+  background-color: #34ebab;
+
+}
+
+.form {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+}
+
+.form label {
+  margin-top: 20px;
+  font-size: 20px;
+  
+}
+
+.form .input {
+  margin-top: 10px;
+  width: 60%;
+  position: relative;
+  left: 20%;
+  border: 0px;
+  padding-left: 10px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #cae0d9;
+}
+
+.forms {
+  height: auto;
+}
+
+#submit {
+  width: 20%;
+  left: 40%;
+  background-color: black;
+  color:white;
+  margin-top: 30px;
+}
+.hide {
+  display: none;
+}
+
+.divv{
+
+display:flex;
+margin-top:50px;
+justify-content:center;
+direction:row;
+}
+
+
+</style>
+</head>
+
+<body>
+<div id="maindiv">
+
+<div class="topnav">
+
+<a class="a" a href="home.html"> Ballina </a>
+<a href="rrethnesh.html">Rreth Nesh</a>
+<a href="informacion.html">Informacione</a>
+<a href="Pyetesor.html">Pyetësor</a>
+<a href="aplikimi.html">Login</a>
+<img id="img1" src="qkuk1.jpg"/>
+</div>
+
+
+
+</div>
+</div>
+
+<div class="div1">
+<div class="link">
+      <a id="first" href="#" onclick="changeForm(0)">Login</a>
+      <a href="#" onclick="changeForm(1)">Register</a>
+    </div>
+	
+	<form id="main" action="">
+      <div class="login forms form">
+        <label for="" id="usernameInput"></label>Email:</label>
+        <input type="text" id="username" class="input" placeholder="username" />
+        <label for="">Password:</label>
+        <input type="password" class="input" placeholder="password..." />
+        <input id="submit" type="submit" class="input submit" value="Login" onclick="validate(0)" />
+      </div>
+      <div class="register forms hide">
+
+	  <label for="">Emri:</label>
+        <input type="text" class="input" placeholder="Emri" />
+		<label for="">Mbiemri:</label>
+        <input type="text" class="input" placeholder="Mbiemri" />
+        <label for="">Email:</label>
+        <input type="text" class="input" placeholder="username" />
+        <label for="">password:</label>
+        <input type="password" class="input" placeholder="password" />
+        <label for="">Confirm Password:</label>
+        <input type="password" class="input" placeholder="password" />
+		  
+  <div class="divv">
+  <label for="male">Male</label><br>
+  <input type="radio" id="Male" name="gender" value="male">
+  
+  
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="female">Female</label><br>
+  
+
+  </div>
+        <input id="submit" type="submit" class="input submit" value="Register" onclick="validate(1)" />
+	
+      </div>
+    </form>
+ </div>
+
+ <script>
+    var num = 5;
+function validate(){
+ var elementList = document.getElementsByClassName("input-field");
+ for(var i = 0; i<elementList.length; i++){
+ elementList[i].addEventListener('keyup',function(event){
+  [event.target.name]= event.target.value;
+  console.log(event.target.value);
+ 
+});
+    }
+	
+	}
+	
+
+
+ function validate(number){
+     console.log("hyri ne funksion");
+     if(number == 0){
+      //Login
+	  
+      var usernameValue = inputElements[0].value;
+      var passwordValue = inputElements[1].value;
+      console.log("username "+usernameValue);
+      console.log("password "+passwordValue);
+      if(usernameValue =="" || passwordValue == "" ){
+        alert("Nuk ka te dhena");}
+		
+
+	
+ else if(!usernameValue.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)){
+alert("Email jo valide!");
+}
+
+
+ else if(!passwordValue.match(/^(?=.*[0-9])/)){
+alert("Pasword jo valid!");
+}
+
+     else{
+        alert("login success");
+      }
+	  }
+	  
+else if(number == 1){
+       //Register
+       var nameValue = inputElements[3].value;
+       var lastNameValue = inputElements[4].value;
+       var passwordRegValue = inputElements[5].value;
+       console.log("name "+nameValue);
+       console.log("lastName "+lastNameValue);
+       console.log("passwordReg "+passwordRegValue);
+       if(nameValue == "" && lastNameValue == "" && passwordRegValue == ""){
+        alert("Nuk ka te dhena");
+	
+       }
+	   else if(!nameValue.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)){
+alert("Email jo valide!");}
+
+/*else if (!passwordRegValue.match(/^(?=.*[A-Z])(?=.*[0-9])[A-Za-z]+{8,}$/)){
+alert("Password jo valide!");}*/
+	   
+	   else{
+        alert("Jeni regjistruar me sukses!")
+       }
+     }
+   }
+
+    console.log("jashte funksionit");
+
+    function changeForm(number){
+      var format = document.getElementsByClassName('forms');
+      if(number == 0){
+        format[0].classList.remove("hide");
+        format[0].classList.add("form");
+        format[1].classList.add("hide");
+        format[1].classList.remove("form");
+      }else if(number == 1){
+        format[1].classList.remove("hide");
+        format[1].classList.add("form");
+        format[0].classList.add("hide");
+        format[0].classList.remove("form");
+      }
+    }
+    
+     var inputElements = document.getElementsByClassName("input");
+     var usernameValue = inputElements[0].value;
+     var passwordValue = inputElements[1].value;
+     //console.log("username "+usernameValue);
+     //console.log("password "+passwordValue);
+
+</script>
+
+</body>
+<html>
