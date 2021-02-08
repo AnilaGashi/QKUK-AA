@@ -185,6 +185,8 @@ direction:row;
       <a href="#" onclick="changeForm(1)">Register</a>
     </div>
 	
+	
+	
 	<form id="main" action="">
       <div class="login forms form">
         <label for="" id="usernameInput"></label>Email:</label>
@@ -223,7 +225,7 @@ direction:row;
  </div>
 
  <script>
-    var num = 5;
+    var num = 7;
 function validate(){
  var elementList = document.getElementsByClassName("input-field");
  for(var i = 0; i<elementList.length; i++){
@@ -269,20 +271,22 @@ alert("Pasword jo valid!");
 else if(number == 1){
        //Register
        var nameValue = inputElements[3].value;
-       var lastNameValue = inputElements[4].value;
-       var passwordRegValue = inputElements[5].value;
+	   var passwordRegValue = inputElements[4].value;
+       var lastNameValue = inputElements[5].value;
+     
        console.log("name "+nameValue);
        console.log("lastName "+lastNameValue);
        console.log("passwordReg "+passwordRegValue);
-       if(nameValue == "" && lastNameValue == "" && passwordRegValue == ""){
+       if(nameValue == "" || lastNameValue == "" || passwordRegValue == ""){
         alert("Nuk ka te dhena");
 	
        }
 	   else if(!nameValue.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)){
 alert("Email jo valide!");}
 
-/*else if (!passwordRegValue.match(/^(?=.*[A-Z])(?=.*[0-9])[A-Za-z]+{8,}$/)){
-alert("Password jo valide!");}*/
+ else if(!passwordRegValue.match(/^(?=.*[0-9])/)){
+alert("Pasword jo valid!");
+}
 	   
 	   else{
         alert("Jeni regjistruar me sukses!")
